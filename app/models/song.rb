@@ -32,5 +32,4 @@ class Song < ActiveRecord::Base
       note.content
     end
   end
-
 end
