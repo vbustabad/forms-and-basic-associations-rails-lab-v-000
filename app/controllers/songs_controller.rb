@@ -60,6 +60,16 @@ class SongsController < ApplicationController
      self.genre ? self.genre.name : nil
   end
 
+  def note_contents=(contents)
+    contents.each do |content|
+      note = Note.find(content)
+      self.notes << note
+    end
+  end
+
+  
+
+
   private
 
   def song_params
