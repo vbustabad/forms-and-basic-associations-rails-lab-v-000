@@ -19,7 +19,7 @@ class Song < ActiveRecord::Base
      self.genre ? self.genre.name : nil
   end
 
-  def note_contents=(contents)
+  def note_contents=(notes)
     notes.each do |note|
       if note.strip != ""
         self.notes.build(content: note)
