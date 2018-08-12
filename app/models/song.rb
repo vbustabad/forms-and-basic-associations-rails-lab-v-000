@@ -20,10 +20,14 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents=(contents)
-    contents.each do |content|
-      note = Note.find(content)
-      self.notes << note
+    
     end
   end
 
+  def note_contents
+    self.notes.collect do |note|
+      note.content
+    end
+  end 
+  
 end
